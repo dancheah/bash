@@ -1,0 +1,43 @@
+function use_bfgap2() { 
+    export BFG_AP2_DB_PROJECT=/websites/bfg/share/database/bfg_ap2
+    export BFG_AP2_PROJECT=/websites/bfg/share/sites/bfg_ap2
+    export GAMESTORE_SITE="http://us-ap2.dc.dd.dev"
+
+    if [ "X${PRE_BFGAP2_CP}X" == "XX" ]
+    then
+        export PRE_BFGAP2_CP=${CLASSPATH}
+    fi
+    get_jar_files
+    export CLASSPATH=$RETURN
+
+    if [ "X${PRE_BFGAP2_PP}X" == "XX" ]
+    then
+        export PRE_BFGAP2_PP=${PYTHONPATH}
+    fi
+    export PYTHONPATH=${BFG_AP2_DB_PROJECT}/scripts:${BFG_AP2_PROJECT}/bin:${BFG_AP2_PROJECT}/ftests:${BFG_AP2_PROJECT}/lib
+
+    if [ "X${PRE_BFGAP2_PATH}X" == "XX" ]
+    then
+        export PRE_BFGAP2_PATH=${PATH}
+        export PATH=${BFG_AP2_DB_PROJECT}/scripts:${BFG_AP2_PROJECT}/bin:${PATH}
+    else
+        export PATH=${BFG_AP2_DB_PROJECT}/scripts:${BFG_AP2_PROJECT}/bin:${BFG_AP2_PROJECT}/ftests:${PRE_BFGAP2_PATH}
+    fi
+}
+
+function get_jar_files() {
+    RETURN=$(join.py $(ls ${BFG_AP2_PROJECT}/lib/*.jar))
+}
+
+function cd_db() {
+    cd ${BFG_AP2_DB_PROJECT}
+}
+
+function cd_site() {
+    cd ${BFG_AP2_PROJECT}
+}
+
+use_bfgap2
+
+source ~/.bash/source-jython.sh
+# vim: sts=4 sw=4 ts=4 et ft=sh  

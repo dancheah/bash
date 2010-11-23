@@ -12,7 +12,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+	    . "$HOME/.bashrc"
     fi
 fi
 
@@ -27,31 +27,34 @@ if [ -d "/opt/local" ]; then
     MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 fi
 
-source $MY_BASH_HOME/bash/functions.sh
-source $MY_BASH_HOME/bash/path
-source $MY_BASH_HOME/bash/repos.sh
-source $MY_BASH_HOME/bash/set-java-home.sh
-source $MY_BASH_HOME/bash/source-jython.sh
-source $MY_BASH_HOME/bash/source-ruby.sh
-source $MY_BASH_HOME/bash/source-perl.sh
-source $MY_BASH_HOME/bash/source-haskell.sh
-source $MY_BASH_HOME/bash/source-fsharp.sh
+#source $MY_BASH_HOME/bash/functions.sh
+#source $MY_BASH_HOME/bash/path
+#source $MY_BASH_HOME/bash/repos.sh
+#source $MY_BASH_HOME/bash/set-java-home.sh
+#source $MY_BASH_HOME/bash/source-jython.sh
+#source $MY_BASH_HOME/bash/source-ruby.sh
+#source $MY_BASH_HOME/bash/source-perl.sh
+#source $MY_BASH_HOME/bash/source-haskell.sh
+#source $MY_BASH_HOME/bash/source-fsharp.sh
+
 # Fallback to the old virtualenv stuff if
 # we are not using macports
-if [ -f /opt/local/bin/virtualenvwrapper_bashrc-2.6 ];
-then
-    source /opt/local/bin/virtualenvwrapper_bashrc-2.6 
-else
-    source $MY_BASH_HOME/virtualenvwrapper-1.24.2/virtualenvwrapper_bashrc
-fi
+# if [ -f /opt/local/bin/virtualenvwrapper_bashrc-2.6 ];
+#then
+    #source /opt/local/bin/virtualenvwrapper_bashrc-2.6 
+#else
+    #source $MY_BASH_HOME/virtualenvwrapper-1.24.2/virtualenvwrapper_bashrc
+#fi
 #source $MY_BASH_HOME/bash/source-clojure.sh
-#source $HOME/.bash/bfgap2
 
-export MY_PRE_MAVEN_PATH=${PATH}
-use MAVEN_HOME /opt/personal/pkg/apache-maven-2.2.1
-export MY_PRE_ANT_PATH=${PATH}
-use ANT_HOME /opt/personal/pkg/apache-ant-1.8.1
+#export MY_PRE_MAVEN_PATH=${PATH}
+#use MAVEN_HOME /opt/personal/pkg/apache-maven-2.2.1
+#export MY_PRE_ANT_PATH=${PATH}
+#use ANT_HOME /opt/personal/pkg/apache-ant-1.8.1
 
+# Figure out if we have MacVim
+# otherwise set regular vim as
+# our editor.
 function set_editor() {
     WHICH_EDITOR=`which mvim`
     if [ "X${WHICH_EDITOR}X" == "XX" ]; then
