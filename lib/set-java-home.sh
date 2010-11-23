@@ -4,9 +4,9 @@ function set_java_home() {
     elif [ -d "/usr/local/jdk1.6" ]; then
         use JAVA_HOME /usr/local/jdk1.6
     elif [ -d "/usr/lib/jvm/java-6-sun" ]; then
-        export JAVA_HOME=/usr/lib/jvm/java-6-sun
+        use JAVA_HOME /usr/lib/jvm/java-6-sun
     else 
-        export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
+        use JAVA_HOME /usr/lib/jvm/java-6-openjdk
     fi
 }
 

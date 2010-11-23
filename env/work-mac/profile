@@ -5,14 +5,14 @@ export MAVEN_OPTS='-Xms512m -Xmx1024m'
 use MYSQL_HOME /Applications/MAMP/Library
 
 # This gets used in the various env.sh files
-export STANDARD_PATH=${PATH}
+#export STANDARD_PATH=${PATH}
 
 # Source environment specific config
-export MY_PRE_ENVSH_PATH=${PATH}
-if [ -f ~/env.sh ]; 
-then
-    source ~/env.sh
-fi
+# export MY_PRE_ENVSH_PATH=${PATH}
+# if [ -f ~/env.sh ]; 
+#then
+    #source ~/env.sh
+#fi
 
 alias ls='gls --color'
 alias svndiff='svn diff --diff-cmd svnopendiffshim.py'

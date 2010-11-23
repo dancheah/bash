@@ -17,7 +17,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
@@ -27,14 +27,19 @@ if [ -d "/opt/local" ]; then
     MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 fi
 
+# set PATH to my command line scripts
+export PATH=$HOME/.bash/bin:$PATH
+
+# set up my various library functions
 source ~/.bash/lib/functions.sh
+source ~/.bash/lib/set-java-home.sh
+source ~/.bash/lib/source-perl.sh
+source ~/.bash/lib/source-haskell.sh
+
 #source $MY_BASH_HOME/bash/path
 #source $MY_BASH_HOME/bash/repos.sh
-#source $MY_BASH_HOME/bash/set-java-home.sh
 #source $MY_BASH_HOME/bash/source-jython.sh
 #source $MY_BASH_HOME/bash/source-ruby.sh
-#source $MY_BASH_HOME/bash/source-perl.sh
-#source $MY_BASH_HOME/bash/source-haskell.sh
 #source $MY_BASH_HOME/bash/source-fsharp.sh
 
 # Fallback to the old virtualenv stuff if
@@ -67,6 +72,8 @@ set_editor
 
 # If there are special environment files 
 # then we should source them in
+# TODO: might want to move this to the
+# bashrc
 if [ -e "$HOME/.env" ] ; then
     source $HOME/.env/*
 fi
