@@ -1,0 +1,21 @@
+# Some stuff needs to be built up 
+export MAVEN_OPTS='-Xms512m -Xmx1024m'
+
+# Use the MAMP version of MySQL
+use MYSQL_HOME /Applications/MAMP/Library
+
+# This gets used in the various env.sh files
+export STANDARD_PATH=${PATH}
+
+# Source environment specific config
+export MY_PRE_ENVSH_PATH=${PATH}
+if [ -f ~/env.sh ]; 
+then
+    source ~/env.sh
+fi
+
+alias ls='gls --color'
+alias svndiff='svn diff --diff-cmd svnopendiffshim.py'
+# eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+
+# vim: sts=4 sw=4 ts=4 et ft=sh

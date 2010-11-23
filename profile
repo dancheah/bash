@@ -27,7 +27,7 @@ if [ -d "/opt/local" ]; then
     MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 fi
 
-#source $MY_BASH_HOME/bash/functions.sh
+source ~/.bash/lib/functions.sh
 #source $MY_BASH_HOME/bash/path
 #source $MY_BASH_HOME/bash/repos.sh
 #source $MY_BASH_HOME/bash/set-java-home.sh
@@ -64,5 +64,11 @@ function set_editor() {
     fi
 }
 set_editor
+
+# If there are special environment files 
+# then we should source them in
+if [ -e "$HOME/.env" ] ; then
+    source $HOME/.env/*
+fi
 
 # vim: sts=4 sw=4 et ft=sh
