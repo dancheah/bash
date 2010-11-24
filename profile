@@ -75,7 +75,10 @@ set_editor
 # TODO: might want to move this to the
 # bashrc
 if [ -e "$HOME/.env" ] ; then
-    source $HOME/.env/*
+    for i in $HOME/.env/*
+    do
+        source $i 
+    done
 fi
 
 # vim: sts=4 sw=4 et ft=sh

@@ -1,4 +1,3 @@
-alias ls='gls --color'
 alias ls='/opt/local/bin/gls --color'
 alias www='cd /opt/www'
 alias personal='cd /opt/personal'
