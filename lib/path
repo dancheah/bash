@@ -1,5 +1,0 @@
-# Setup various paths
-export MY_ORIGINAL_PATH=${PATH}
-export PATH=${MY_SHELL_HOME}/scripts:/opt/personal/bin:${PATH}
-
-# vim: sts=4 sw=4 ts=4 et ft=sh
