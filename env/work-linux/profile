@@ -1,0 +1,9 @@
+export JDK_HOME=${JAVA_HOME}
+export BFG_HOME=~/IdeaProjects/websites/bfg
+export BFG_DEV_DOMAIN=dclinux.dd.dev
+xset -b
+
+alias svn-diff='svn diff --diff-cmd /usr/bin/meld'
+alias sx='Xephyr -ac -screen 1400x900 -br -reset -terminate 2> /dev/null :1 &'
+
+# vim: sts=4 sw=4 ts=4 et ft=sh
