@@ -31,31 +31,18 @@ fi
 export PATH=$HOME/.bash/bin:$PATH
 
 # set up my various library functions
-source ~/.bash/lib/functions.sh
-source ~/.bash/lib/set-java-home.sh
-source ~/.bash/lib/source-perl.sh
-source ~/.bash/lib/source-haskell.sh
+LIB=$HOME/.bash/lib
+source $LIB/functions.sh
+source $LIB/set-java-home.sh
+source $LIB/source-perl.sh
+source $LIB/source-haskell.sh
+source $LIB/source-ruby.sh
+source $LIB/source-python.sh
 
-#source $MY_BASH_HOME/bash/path
 #source $MY_BASH_HOME/bash/repos.sh
 #source $MY_BASH_HOME/bash/source-jython.sh
-#source $MY_BASH_HOME/bash/source-ruby.sh
 #source $MY_BASH_HOME/bash/source-fsharp.sh
-
-# Fallback to the old virtualenv stuff if
-# we are not using macports
-# if [ -f /opt/local/bin/virtualenvwrapper_bashrc-2.6 ];
-#then
-    #source /opt/local/bin/virtualenvwrapper_bashrc-2.6 
-#else
-    #source $MY_BASH_HOME/virtualenvwrapper-1.24.2/virtualenvwrapper_bashrc
-#fi
 #source $MY_BASH_HOME/bash/source-clojure.sh
-
-#export MY_PRE_MAVEN_PATH=${PATH}
-#use MAVEN_HOME /opt/personal/pkg/apache-maven-2.2.1
-#export MY_PRE_ANT_PATH=${PATH}
-#use ANT_HOME /opt/personal/pkg/apache-ant-1.8.1
 
 # Figure out if we have MacVim
 # otherwise set regular vim as
@@ -75,7 +62,10 @@ set_editor
 # TODO: might want to move this to the
 # bashrc
 if [ -e "$HOME/.env" ] ; then
-    source $HOME/.env/*
+    for i in $HOME/.env/*
+    do
+        source $i 
+    done
 fi
 
 # vim: sts=4 sw=4 et ft=sh
