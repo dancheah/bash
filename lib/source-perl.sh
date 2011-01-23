@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function use_rakudo() {
-    use RAKUDO_HOME /opt/personal/pkg/rakudo
+    use RAKUDO_HOME /opt/personal/pkg/rakudo/install
 }
 
 function use_default_locallib() {

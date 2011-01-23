@@ -38,6 +38,7 @@ source $LIB/source-perl.sh
 source $LIB/source-haskell.sh
 source $LIB/source-ruby.sh
 source $LIB/source-python.sh
+source $LIB/source-play.sh
 
 #source $MY_BASH_HOME/bash/repos.sh
 #source $MY_BASH_HOME/bash/source-jython.sh
