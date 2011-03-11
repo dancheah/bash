@@ -4,6 +4,10 @@ function use_cabal {
     use MY_CABAL_HOME ${HOME}/.cabal
 }
 
+function use_mac_cabal {
+    use MY_CABAL_HOME ${HOME}/Library/Haskell
+}
+
 function use_ghc {
     use MY_GHC_HOME ${HOME}/ghc6
     use_cabal

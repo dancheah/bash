@@ -40,6 +40,8 @@ source $LIB/source-ruby.sh
 source $LIB/source-python.sh
 source $LIB/source-play.sh
 source $LIB/source-scala.sh
+source $LIB/source-erlang.sh
+source $LIB/source-javascript.sh
 
 #source $MY_BASH_HOME/bash/repos.sh
 #source $MY_BASH_HOME/bash/source-jython.sh
