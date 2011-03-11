@@ -1,0 +1,6 @@
+[submodule "lib/z"]
+	path = lib/z
+	url = https://github.com/rupa/z.git
+[submodule "lib/bashmarks"]
+	path = lib/bashmarks
+	url = https://github.com/huyng/bashmarks.git
