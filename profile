@@ -48,6 +48,9 @@ source $LIB/source-javascript.sh
 #source $MY_BASH_HOME/bash/source-fsharp.sh
 #source $MY_BASH_HOME/bash/source-clojure.sh
 
+source $LIB/bashmarks/bashmarks.sh
+source $LIB/z/z.sh
+
 # Figure out if we have MacVim
 # otherwise set regular vim as
 # our editor.
