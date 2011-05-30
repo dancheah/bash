@@ -27,6 +27,17 @@ if [ -d "/opt/local" ]; then
     MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 fi
 
+# If there are special environment files 
+# then we should source them in
+# TODO: might want to move this to the
+# bashrc
+if [ -e "$HOME/.env" ] ; then
+    for i in $HOME/.env/*
+    do
+        source $i 
+    done
+fi
+
 # set PATH to my command line scripts
 export PATH=$HOME/.bash/bin:$PATH
 
@@ -63,16 +74,5 @@ function set_editor() {
     fi
 }
 set_editor
-
-# If there are special environment files 
-# then we should source them in
-# TODO: might want to move this to the
-# bashrc
-if [ -e "$HOME/.env" ] ; then
-    for i in $HOME/.env/*
-    do
-        source $i 
-    done
-fi
 
 # vim: sts=4 sw=4 et ft=sh
