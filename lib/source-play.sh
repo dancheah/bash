@@ -1,6 +1,6 @@
 #!/bin/bash
 function use_play() {
-    export PLAY_HOME=/opt/personal/pkg/play-1.2
+    export PLAY_HOME=/opt/personal/pkg/play-1.2.2
     export PATH=${PLAY_HOME}:${PATH}
 }
 
