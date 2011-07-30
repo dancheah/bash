@@ -1,5 +1,6 @@
 #!/bin/bash
 function use_rvm() {
+    export CC=gcc-4.2
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 }
 
