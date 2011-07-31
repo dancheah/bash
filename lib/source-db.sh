@@ -9,7 +9,7 @@ function use_pgsql {
 }
 
 function start_pgsql {
-    pg_ctl -l logfile start
+    pg_ctl -l /opt/personal/pkg/pgsql/logs/logfile start
 }
 
 # vim: sts=4 sw=4 ts=4 et 
