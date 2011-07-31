@@ -5,6 +5,7 @@ function use_redis {
 
 function use_pgsql {
     use PGSQL_HOME /opt/personal/pkg/pgsql
+    export PGHOST=localhost
     export PGDATA=/opt/personal/pkg/pgsql/data 
 }
 
