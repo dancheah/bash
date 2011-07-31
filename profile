@@ -53,6 +53,7 @@ source $LIB/source-play.sh
 source $LIB/source-scala.sh
 source $LIB/source-erlang.sh
 source $LIB/source-javascript.sh
+source $LIB/source-db.sh
 
 #source $MY_BASH_HOME/bash/repos.sh
 #source $MY_BASH_HOME/bash/source-jython.sh
