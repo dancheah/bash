@@ -14,7 +14,11 @@ function use_default_virtualenv {
 }
 
 function use_virtualenv {
-    source `which virtualenvwrapper.sh`
+    if [ -f /etc/bash_completion.d/virtualenvwrapper ]; then
+        source /etc/bash_completion.d/virtualenvwrapper
+    else
+        source `which virtualenvwrapper.sh`
+    fi
 }
 
 # vim: sts=4 sw=4 ts=4 et ft=sh
