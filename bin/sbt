@@ -2,6 +2,6 @@
 if test -f ~/.sbtconfig; then
   . ~/.sbtconfig
 fi
-exec java -Xmx512M ${SBT_OPTS} -jar ${HOME}/.bash/lib/jars/sbt-launch.jar "$@"
+exec java -Xmx512M ${SBT_OPTS} -jar ${HOME}/.bash/lib/jars/sbt-launch-0.7.7.jar "$@"
 
 # vim: sts=4 sw=4 ts=4 et ft=sh
