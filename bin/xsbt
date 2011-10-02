@@ -2,6 +2,10 @@
 if test -f ~/.sbtconfig; then
   . ~/.sbtconfig
 fi
-exec java -Xmx512M ${SBT_OPTS} -jar ${HOME}/.bash/lib/jars/sbt-launch.jar "$@"
+
+# As suggested by https://github.com/harrah/xsbt/wiki/Setup
+JAVA_OPTS="-Dfile.encoding=UTF8 -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m"
+
+exec java ${JAVA_OPTS} ${SBT_OPTS} -jar ${HOME}/.bash/lib/jars/sbt-launch.jar "$@"
 
 # vim: sts=4 sw=4 ts=4 et ft=sh
